@@ -49,7 +49,7 @@ To run this project locally, follow these steps:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/anirudhlohiya/AndroidBlogs.git](https://github.com/anirudhlohiya/AndroidBlogs.git)
+    git clone https://github.com/anirudhlohiya/AndroidBlogs.git
     ```
 2.  **Open in Android Studio:**
     Open the cloned project in Android Studio.
