@@ -41,7 +41,7 @@ The project follows a clean architecture pattern, separating concerns into disti
 
 | Blog List Screen | Blog Content Screen | Interactive Task |
 | :--------------: | :---------------: | :----------------: |
-| ![Blog List Screen](https://media.githubusercontent.com/media/google-gemini/sample-images/main/Screenshot_20250727_013734.jpg) | ![Blog Content Screen](https://media.githubusercontent.com/media/google-gemini/sample-images/main/Screenshot_20250727_013740.jpg) | ![Interactive Task](https://media.githubusercontent.com/media/google-gemini/sample-images/main/Screenshot_20250727_013745.jpg) |
+| ![Blog List Screen](https://raw.githubusercontent.com/anirudhlohiya/AndroidBlogs/refs/heads/master/images/ss1.jpg) | ![Blog Content Screen](https://raw.githubusercontent.com/anirudhlohiya/AndroidBlogs/refs/heads/master/images/ss2.jpg) | ![Interactive Task](https://raw.githubusercontent.com/anirudhlohiya/AndroidBlogs/refs/heads/master/images/ss3.jpg) |
 
 ## Installation and Setup
 
