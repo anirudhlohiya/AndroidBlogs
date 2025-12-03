@@ -55,6 +55,12 @@ jobs:
           SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
           SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
 
+           # ADD THIS NEW DEBUGGING STEP
+      - name: List APK Directory
+        run: |
+          echo "Listing contents of the release APK directory:"
+          find app/build/outputs/apk/release/ -name "*.apk"
+
       # NEW STEP 7: Upload the APK as a GitHub Artifact
       - name: Upload APK
         uses: actions/upload-artifact@v4
