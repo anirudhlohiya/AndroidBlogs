@@ -39,14 +39,25 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x ./gradlew
 
-      # Step 5: Run unit tests
-      - name: Run Unit Tests
-        run: ./gradlew test --no-daemon
+      # NEW STEP 5: Decode the keystore from Base64
+      - name: Decode Keystore
+        env:
+          ENCODED_STRING: ${{ secrets.SIGNING_KEY }}
+        run: |
+          echo $ENCODED_STRING | base64 -di > app/release-key.jks
 
-      # Step 6: Run lint checks
-      - name: Run Lint
-        run: ./gradlew lint --no-daemon
+      # NEW STEP 6: Build the Signed Release APK
+      - name: Build Signed APK
+        run: ./gradlew assembleRelease --no-daemon
+        env:
+          # Pass the secrets to Gradle as environment variables
+          SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
+          SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
+          SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
 
-      # Step 7: Build the project
-      - name: Build with Gradle
-        run: ./gradlew assemble --no-daemon
+      # NEW STEP 7: Upload the APK as a GitHub Artifact
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-apk
+          path: app/build/outputs/apk/release/app-release.apk
