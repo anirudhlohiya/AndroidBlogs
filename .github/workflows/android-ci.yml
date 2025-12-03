@@ -7,10 +7,10 @@ name: Android CI
 on:
   # Triggers on push events but only for the "main" branch
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
   # Triggers on pull request events targeted at the "main" branch
   pull_request:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
